@@ -14,9 +14,9 @@ app.use(cors());
 app.get('/',(req,res)=>{
     res.send('hii');
 })
-app.get('/getdata',(req,res)=>{
-    const data=db.get('logins');
-    data.find({}).then((result)=>{ res.send(result)});
+app.get('/getdata', (req, res) => {
+    const data = db.get('logins');
+    data.find({ password: { $exists: true }, c_password: { $exists: true } }).then((result) => { res.send(result) });
 });
 app.post('/getcontacts',(req,res)=>{
     const data=db.get('logins');
