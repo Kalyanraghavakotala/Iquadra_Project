@@ -1,0 +1,13 @@
+a {
+    text-decoration: none;
+    color: rgb(245, 240, 240);
+}
+
+a:hover {
+    color: black
+}
+
+.x {
+    /* background-color: reds; */
+    height: calc(100svh - 270px);
+}
