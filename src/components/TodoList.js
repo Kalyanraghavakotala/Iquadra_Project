@@ -4,6 +4,8 @@ import { Table } from 'react-bootstrap';
 import Footer from './Footer';
 import { useNavigate } from 'react-router-dom';
 
+
+
 const Rows = (props) => {
   const navig = useNavigate()
   // useEffect(() => {
@@ -94,7 +96,6 @@ const TodoList = () => {
 
   return (
     <>
-      <Header /><br />
       <center><h1>TodoList</h1></center>
       <div className='col-md-6 offset-md-3' style={{ marginTop: '2%', marginBottom: '2' }}>
         <div>
@@ -139,7 +140,6 @@ const TodoList = () => {
         </div>
         <br />
       </div>
-      <Footer />
     </>
   );
 };

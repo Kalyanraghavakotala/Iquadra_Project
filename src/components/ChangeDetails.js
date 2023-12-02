@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import { Watermark } from 'antd';
+
 function ChangeDetails() {
     const navig = useNavigate();
 
@@ -101,106 +103,106 @@ function ChangeDetails() {
         // If the user is not logged in, render the login form
         return (
             <>
-                <Header />
-                <div className='row login' style={{ height: '100vh' }} >
-                    <div className='col-md-6 offset-md-3' style={{ marginTop: '2%', marginBottom: '2' }}>
+                <Watermark content={['iQuadra', 'aditya']} offset={[0, 0]}>
 
-                        <div style={formContainer}>
-                            <form onSubmit={(e) => {
-                                e.preventDefault();
-                                handleSubmit()
+                    <div className='row login' style={{ height: '100vh' }} >
+                        <div className='col-md-6 offset-md-3' style={{ marginTop: '2%', marginBottom: '2' }}>
+
+                            <div style={formContainer}>
+                                <form onSubmit={(e) => {
+                                    e.preventDefault();
+                                    handleSubmit()
 
 
-                            }} style={formStyle}>
-                                <h2 style={{ textAlign: "center", marginBottom: "25px" }}>
-                                    Register
-                                </h2>
-                                < span id='error' style={{ color: 'red' }}></span>
-                                <div style={inputContainer}>
-                                    <label style={labelStyle}>First Name:</label>
-                                    <input type="text" name="first" value={first}
-                                        onChange={handleChange} disabled
-                                        style={inputStyle}
-                                    />
-                                </div><br />
-                                <div style={inputContainer}>
-                                    <label style={labelStyle}>Middle Name:</label>
-                                    <input type="text" name="middle"
-                                        onChange={handleChange} value={middle} disabled
-                                        style={inputStyle}
-                                    />
-                                </div><br />
-                                <div style={inputContainer}>
-                                    <label style={labelStyle}>Last Name:</label>
-                                    <input type="text" name="last"
-                                        onChange={handleChange} value={last} disabled
-                                        style={inputStyle}
-                                    />
-                                </div><br />
-                                <div style={inputContainer}>
-                                    <label style={labelStyle}>Email:</label>
-                                    <input type="email" name="email"
-                                        onChange={handleChange} value={email} disabled
-                                        style={inputStyle}
-                                    />
-                                </div><br />
-                                <div style={inputContainer}>
-                                    <label style={labelStyle}>Password:</label>
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        onChange={handleChange}
-                                        style={inputStyle}
-                                    />
-                                </div><br />
-                                <div style={inputContainer}>
-                                    <label style={labelStyle}>Confirm Password:</label>
-                                    <input
-                                        type="password"
-                                        name="c_password"
-                                        onChange={handleChange}
-                                        style={inputStyle}
-                                    />
-                                </div><br />
-                                <div style={inputContainer}>
-                                    <label style={labelStyle}>Mobile:</label>
-                                    <input type="text" name="mobile"
-                                        onChange={handleChange} value={mobile} disabled
-                                        style={inputStyle}
-                                    />
-                                </div><br />
-                                <div style={inputContainer}>
-                                    <label style={labelStyle}>Current Address:</label>
-                                    <input type="text" name="current"
-                                        onChange={handleChange}
-                                        style={inputStyle}
-                                    />
-                                </div>
-                                <br /><div style={inputContainer}>
-                                    <label style={labelStyle}>Permanent Address:</label>
-                                    <input type="text" name="permanent"
-                                        onChange={handleChange} value={perman} disabled
-                                        style={inputStyle}
-                                    />
-                                </div>
-                                <div style={inputContainer}>
-                                    <label style={labelStyle}>Upload Picture:</label>
-                                    <input type="file" accept=' .jpg, .png, .jpeg' name="image"
-                                        style={inputStyle}
-                                        onChange={photoTaken}
-                                    />
-                                </div>
-                                <center>
-                                    <button type="submit" className="btn btn-success" style={{ padding: "10px 20px" }}>
-                                        Submit
-                                    </button>
-                                </center>
-                            </form>
+                                }} style={formStyle}>
+                                    <h2 style={{ textAlign: "center", marginBottom: "25px" }}>
+                                        Register
+                                    </h2>
+                                    < span id='error' style={{ color: 'red' }}></span>
+                                    <div style={inputContainer}>
+                                        <label style={labelStyle}>First Name:</label>
+                                        <input type="text" name="first" value={first}
+                                            onChange={handleChange} disabled
+                                            style={inputStyle}
+                                        />
+                                    </div><br />
+                                    <div style={inputContainer}>
+                                        <label style={labelStyle}>Middle Name:</label>
+                                        <input type="text" name="middle"
+                                            onChange={handleChange} value={middle} disabled
+                                            style={inputStyle}
+                                        />
+                                    </div><br />
+                                    <div style={inputContainer}>
+                                        <label style={labelStyle}>Last Name:</label>
+                                        <input type="text" name="last"
+                                            onChange={handleChange} value={last} disabled
+                                            style={inputStyle}
+                                        />
+                                    </div><br />
+                                    <div style={inputContainer}>
+                                        <label style={labelStyle}>Email:</label>
+                                        <input type="email" name="email"
+                                            onChange={handleChange} value={email} disabled
+                                            style={inputStyle}
+                                        />
+                                    </div><br />
+                                    <div style={inputContainer}>
+                                        <label style={labelStyle}>Password:</label>
+                                        <input
+                                            type="password"
+                                            name="password"
+                                            onChange={handleChange}
+                                            style={inputStyle}
+                                        />
+                                    </div><br />
+                                    <div style={inputContainer}>
+                                        <label style={labelStyle}>Confirm Password:</label>
+                                        <input
+                                            type="password"
+                                            name="c_password"
+                                            onChange={handleChange}
+                                            style={inputStyle}
+                                        />
+                                    </div><br />
+                                    <div style={inputContainer}>
+                                        <label style={labelStyle}>Mobile:</label>
+                                        <input type="text" name="mobile"
+                                            onChange={handleChange} value={mobile} disabled
+                                            style={inputStyle}
+                                        />
+                                    </div><br />
+                                    <div style={inputContainer}>
+                                        <label style={labelStyle}>Current Address:</label>
+                                        <input type="text" name="current"
+                                            onChange={handleChange}
+                                            style={inputStyle}
+                                        />
+                                    </div>
+                                    <br /><div style={inputContainer}>
+                                        <label style={labelStyle}>Permanent Address:</label>
+                                        <input type="text" name="permanent"
+                                            onChange={handleChange} value={perman} disabled
+                                            style={inputStyle}
+                                        />
+                                    </div>
+                                    <div style={inputContainer}>
+                                        <label style={labelStyle}>Upload Picture:</label>
+                                        <input type="file" accept=' .jpg, .png, .jpeg' name="image"
+                                            style={inputStyle}
+                                            onChange={photoTaken}
+                                        />
+                                    </div>
+                                    <center>
+                                        <button type="submit" className="btn btn-success" style={{ padding: "10px 20px" }}>
+                                            Submit
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <Footer />
-                </div>
-
+                </Watermark>
             </>
         );
     }

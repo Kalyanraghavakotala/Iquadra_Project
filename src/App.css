@@ -7,7 +7,26 @@ a:hover {
     color: black
 }
 
-.x {
+/* .x {
     /* background-color: reds; */
-    height: calc(100svh - 270px);
+/* height: calc(100svh - 270px); */
+/* margin-top: 100px !important; */
+/* }  */
+
+.space {
+    padding-top: 110px !important;
+    height:80vh;
+    overflow-y:scroll !important;
+}
+.reload{
+    animation: anim 1.5s linear infinite;
+}
+
+@keyframes anim{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
 }

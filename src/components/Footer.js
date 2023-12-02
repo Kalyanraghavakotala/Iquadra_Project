@@ -4,7 +4,7 @@ function Footer() {
 
   return (
     <>
-      <div className='row' style={{ backgroundColor: '#495788', color: 'white', justifyContent: 'space-between', alignItems: 'center', border: '1px solid black ', marginTop: '1%' }}>
+      <div className='row' style={{ zIndex:'1000',width:"100%",backgroundColor: '#495788', color: 'white', justifyContent: 'space-between', alignItems: 'center', border: '1px solid black ', marginTop: '1%',position:'fixed',bottom:'2px' }}>
         <div className='row'>
           <div className='col-md-4' >
             <h3 style={{ margin: '0' }}>iQuadra</h3>

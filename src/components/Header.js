@@ -18,7 +18,7 @@ function Header(props) {
   }
   return (
     <>
-      <div style={{ backgroundColor: '#495788', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px' }}>
+      <div style={{ position:'fixed',zIndex:'1000',width:"100%",backgroundColor: '#495788', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px' }}>
         <h1 style={{ margin: '0' }}>iQuadra</h1>
         <div style={{ display: login }}>
           <br />
@@ -27,6 +27,8 @@ function Header(props) {
             <ul style={{ listStyleType: 'none', margin: '0', padding: '0' }}>
               <li style={{ display: 'inline-block', marginRight: '10px' }}><Link to='/dashboard'>My Profile</Link></li>
               <li style={{ display: 'inline-block', marginRight: '10px' }}><Link to='/contacts'>Contacts</Link></li>
+              <li style={{ display: 'inline-block', marginRight: '10px' }}><Link to='/gallery'>Gallery</Link></li>
+
               <li style={{ display: 'inline-block', marginRight: '10px' }}><Link to='/reminder'>Reminders</Link></li>
               <li style={{ display: 'inline-block', marginRight: '10px' }}><Link to='/todo'>TodoList</Link></li>
               <li style={{ display: 'inline-block', marginLeft: '10px' }}>

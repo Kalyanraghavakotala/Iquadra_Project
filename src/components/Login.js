@@ -6,6 +6,11 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
+
+import { Watermark } from 'antd';
+import Header from './Header';
+import Footer from './Footer';
+
 function Login() {
   const navig = useNavigate();
 
@@ -16,6 +21,8 @@ function Login() {
     color: "white",
     opacity: "1"
   };
+
+
 
   const inputStyle = {
     padding: "10px",
@@ -126,76 +133,79 @@ function Login() {
   else {
     // If the user is not logged in, render the login form
     return (
+      <>
+        <Watermark content={['iQuadra', 'aditya']} offset={[0, 0]}>
 
-      <div className='row login' style={{ height: '100vh' }} >
-        <div className='col-md-6 offset-md-3' style={{ marginTop: '2%', marginBottom: '2' }}>
-          <Marquee style={{ color: 'red' }}>Please wait for some time We load the details from backend!!
-          </Marquee>
-          <div style={formContainer}>
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              handleLogin();
-            }} style={formStyle}>
-              <h2 style={{ textAlign: "center", marginBottom: "25px" }}>
-                Login with your Credentials
-              </h2>
-              < span id='error' style={{ color: 'red' }}></span>
-              <div style={inputContainer}>
-                <label style={labelStyle}>User Email:</label>
-                <input type="text" name="username" value={username} placeholder='enter user email'
-                  onChange={handelUsername}
-                  style={inputStyle}
-                />
-              </div><br />
-              <div style={inputContainer}>
-                <label style={labelStyle}>Password:</label>
-                <input
-                  type="password"
-                  name="password"
-                  value={password}
-                  onChange={handelPassword}
-                  style={inputStyle}
-                />
-              </div><br />
-              <div className='row' style={{ marginTop: '1%' }}>
-                <div>
-                  <div style={{ display: 'flex', height: '50px', width: '100%', justifyContent: 'space-between' }}>
-                    <Button style={{ color: 'blue', backgroundColor: 'white', border: '0px solid white' }} onClick={handleShow}>Forgot Password ?</Button>
-                    <Button style={{ color: 'blue', backgroundColor: 'white', border: '0px solid white' }} onClick={() => navig('/register')} >New User?</Button>
+          <div className='row login x' style={{ height: '100vh' }} >
+            <div className='col-md-6 offset-md-3' style={{ marginTop: '2%', marginBottom: '2' }}>
+              <Marquee style={{ color: 'red' }}>Please wait for some time We load the details from backend!!
+              </Marquee>
+              <div style={formContainer}>
+                <form onSubmit={(e) => {
+                  e.preventDefault();
+                  handleLogin();
+                }} style={formStyle}>
+                  <h2 style={{ textAlign: "center", marginBottom: "25px" }}>
+                    Login with your Credentials
+                  </h2>
+                  < span id='error' style={{ color: 'red' }}></span>
+                  <div style={inputContainer}>
+                    <label style={labelStyle}>User Email:</label>
+                    <input type="text" name="username" value={username} placeholder='enter user email'
+                      onChange={handelUsername}
+                      style={inputStyle}
+                    />
+                  </div><br />
+                  <div style={inputContainer}>
+                    <label style={labelStyle}>Password:</label>
+                    <input
+                      type="password"
+                      name="password"
+                      value={password}
+                      onChange={handelPassword}
+                      style={inputStyle}
+                    />
+                  </div><br />
+                  <div className='row' style={{ marginTop: '1%' }}>
+                    <div>
+                      <div style={{ display: 'flex', height: '50px', width: '100%', justifyContent: 'space-between' }}>
+                        <Button style={{ color: 'blue', backgroundColor: 'white', border: '0px solid white' }} onClick={handleShow}>Forgot Password ?</Button>
+                        <Button style={{ color: 'blue', backgroundColor: 'white', border: '0px solid white' }} onClick={() => navig('/register')} >New User?</Button>
+                      </div>
+                      <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                          <Modal.Title>Enter you mail to change password </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+
+                          <form style={{ maxWidth: '500px', width: '100%' }} onSubmit={handleSubmit}>
+                            <p id='error1' style={{ color: 'red' }}></p>
+                            <label htmlFor="name" style={{ fontSize: '18px', fontWeight: 'bold' }}>Email : </label>
+                            <input type="text" id="name" name="email" required onChange={handleChange} style={{ padding: '8px', fontSize: '16px', borderRadius: '5px', border: '1px solid #ccc', width: '100%', boxSizing: 'border-box', marginTop: '8px', marginBottom: '16px' }} />
+                            <label htmlFor="name" style={{ fontSize: '18px', fontWeight: 'bold' }}>Security Question:What is your Place of Birth ? </label>
+                            <input type="text" id="name" name="security" required onChange={handleChange} style={{ padding: '8px', fontSize: '16px', borderRadius: '5px', border: '1px solid #ccc', width: '100%', boxSizing: 'border-box', marginTop: '8px', marginBottom: '16px' }} />
+
+                          </form>
+                        </Modal.Body>
+                        <Modal.Footer>
+
+                          <Button variant="danger" onClick={() => { handleSubmit(); }}>Submit</Button>
+                        </Modal.Footer>
+                      </Modal>
+
+                    </div>
                   </div>
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Enter you mail to change password </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-
-                      <form style={{ maxWidth: '500px', width: '100%' }} onSubmit={handleSubmit}>
-                        <p id='error1' style={{ color: 'red' }}></p>
-                        <label htmlFor="name" style={{ fontSize: '18px', fontWeight: 'bold' }}>Email : </label>
-                        <input type="text" id="name" name="email" required onChange={handleChange} style={{ padding: '8px', fontSize: '16px', borderRadius: '5px', border: '1px solid #ccc', width: '100%', boxSizing: 'border-box', marginTop: '8px', marginBottom: '16px' }} />
-                        <label htmlFor="name" style={{ fontSize: '18px', fontWeight: 'bold' }}>Security Question:What is your Place of Birth ? </label>
-                        <input type="text" id="name" name="security" required onChange={handleChange} style={{ padding: '8px', fontSize: '16px', borderRadius: '5px', border: '1px solid #ccc', width: '100%', boxSizing: 'border-box', marginTop: '8px', marginBottom: '16px' }} />
-
-                      </form>
-                    </Modal.Body>
-                    <Modal.Footer>
-
-                      <Button variant="danger" onClick={() => { handleSubmit(); }}>Submit</Button>
-                    </Modal.Footer>
-                  </Modal>
-
-                </div>
+                  <center>
+                    <button type="submit" className="btn btn-success" style={{ padding: "10px 20px" }}>
+                      Login
+                    </button>
+                  </center>
+                </form>
               </div>
-              <center>
-                <button type="submit" className="btn btn-success" style={{ padding: "10px 20px" }}>
-                  Login
-                </button>
-              </center>
-            </form>
-          </div>
-        </div >
-      </div >
-
+            </div >
+          </div >
+        </Watermark>
+      </>
     );
   }
 }

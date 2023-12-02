@@ -31,7 +31,7 @@ function Addcontact() {
 		navig('/contacts')
 	}
 	return (
-		<><Header />
+		<>
 			<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: 'Arial, sans-serif' }}>
 				<h1>Add Contacts</h1>
 				<form style={{ maxWidth: '500px', width: '100%' }} onSubmit={handleSubmit}>
@@ -88,7 +88,6 @@ function Addcontact() {
 					<button type="submit" style={{ padding: '8px', fontSize: '16px', borderRadius: '5px', border: 'none', backgroundColor: '#4CAF50', color: 'white', width: '100%', cursor: 'pointer', marginTop: '16px', marginBottom: '8px' }}>Add</button>
 				</form>
 			</div>
-			<Footer />
 		</>
 	);
 }
